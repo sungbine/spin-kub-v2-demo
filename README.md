@@ -6,8 +6,3 @@ during a demo or tutorial.
 
 test!
 3
-333
-33333
-4444dddd
-55555
-
