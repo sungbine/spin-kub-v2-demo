@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.name }}-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
-  minReadySeconds: 5
+  minReadySeconds: 2
   selector:
     matchLabels:
       app: {{ .Values.name }}
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.name }}
-        image: gcr.io/terrycho-sandbox/helloworlds:v1
+        image: {{ .Values.imageUrl }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
