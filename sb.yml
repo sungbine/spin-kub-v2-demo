@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/kimsbin1/sb_sample
+        image: docker.iflat.nhn.com/nginx
         ports:
         - containerPort: 8000
         readinessProbe:
@@ -40,6 +40,8 @@ spec:
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
+      imagePullSecrets:
+      - name: regcred
 
 --- 
 kind: Service
